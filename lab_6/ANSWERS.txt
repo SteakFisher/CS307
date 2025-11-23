@@ -1,0 +1,74 @@
+WEEK 6 LAB - HOPFIELD NETWORKS
+===============================
+
+ASSIGNMENT ANSWERS
+------------------
+
+Problem 1: 10x10 Associative Memory
+- Network: 100 neurons
+- Patterns stored: 5
+- Clean recall: 100% accuracy
+- Noisy recall (20%): 80-89% accuracy
+
+Problem 2: Network Capacity
+- Theoretical capacity: ~14 patterns (0.138 * 100)
+- Observed capacity: ~23 patterns
+- Capacity ratio: 0.23
+
+Problem 3: Error Correction Capability
+ANSWER: The network can reliably correct 15-20% noise (bit flips)
+
+At 20% noise: ~83% average accuracy
+Beyond 30% noise: <70% accuracy
+
+Error correction capability depends on:
+- Number of stored patterns (fewer = better)
+- Pattern distinctiveness
+- Network size
+
+Problem 4: Eight-Rook Problem
+
+Energy Function:
+E = A*sum(row_sum-1)^2 + B*sum(col_sum-1)^2 + C*(total-8)^2
+
+Where:
+- First term: one rook per row
+- Second term: one rook per column
+- Third term: exactly 8 rooks total
+
+Weight Selection:
+A = 2.0 (row constraint)
+B = 2.0 (column constraint)
+C = 1.0 (total count)
+
+REASONING:
+- A and B are equal to enforce row/column symmetry
+- High values (2.0) create strong inhibition between conflicts
+- C is lower (1.0) because it's redundant given A and B
+- If each row has 1 rook AND each column has 1 rook, then total = 8 automatically
+- The ratio 2:2:1 balances constraint satisfaction
+
+Total weights: 4,096 (64x64 matrix)
+
+Problem 5: TSP (10 cities)
+
+ANSWER: 10,000 WEIGHTS
+
+Calculation:
+- Neurons: N x N = 10 x 10 = 100 neurons
+- Each neuron x_i,j represents city i visited at position j
+- Weights: N^2 x N^2 = 100 x 100 = 10,000
+
+Network Parameters:
+A = 500 (one city per position)
+B = 500 (each city visited once)
+C = 200 (total N cities)
+D = 500 (distance minimization)
+
+Weight matrix: 100x100 = 10,000 connections
+
+SUMMARY
+-------
+Error correction: 15-20% noise
+Eight-Rook weights: A=2, B=2, C=1 (symmetric constraints)
+TSP weights: 10,000 total

@@ -1,0 +1,38 @@
+COMPILING THE REPORT
+====================
+
+For LaTeX (report.tex):
+-----------------------
+1. Install a LaTeX distribution:
+   - Windows: MiKTeX or TeX Live
+   - Mac: MacTeX
+   - Linux: texlive-full
+
+2. Compile:
+   pdflatex report.tex
+   pdflatex report.tex  (run twice for references)
+
+3. Output: report.pdf
+
+Alternatively, use Overleaf:
+- Go to https://www.overleaf.com
+- Create new project
+- Upload report.tex
+- Click "Recompile"
+
+For Markdown (REPORT.md):
+-------------------------
+Already readable as-is.
+
+To convert to PDF:
+1. Using pandoc:
+   pandoc REPORT.md -o report_markdown.pdf
+
+2. Using online converter:
+   - https://www.markdowntopdf.com
+   - Upload REPORT.md
+
+QUICK ANSWERS (ANSWERS.txt)
+----------------------------
+Plain text file with all assignment answers.
+No compilation needed.
